@@ -1,0 +1,80 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'League Spartan', sans-serif;
+}
+
+input, .display {
+    font-size: 32px;
+}
+
+:root {
+    --body-bg: #3a4764;
+    --display-bg: #182034;
+    --keypad-bg: #232c43;
+    --gaps: 20px;
+    --del-reset: #637097;
+}
+
+
+body {
+    background-color: var(--body-bg);
+}
+
+.card {
+    /* border: 1px solid green; */
+    border-radius: 5px;
+    width: fit-content;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    gap: var(--gaps);
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+}
+
+section {    
+    border-radius: 5px;
+}
+
+.display {
+    height: 100px;
+    /* border: 2px solid blue; */
+    background-color: var(--display-bg);
+}
+
+.keypad {
+    display: flex;
+    padding: var(--gaps);
+    flex-direction: column;
+    background-color: var(--keypad-bg);
+    gap: var(--gaps);
+}
+
+.keypad > span {
+    display: flex;
+    gap: var(--gaps);
+}
+
+.row input, .lastrow input{
+    height: 50px;
+    display: flex;
+    
+}
+
+.row input{
+    width: 80px;
+}
+
+.lastrow input{
+    width: 50%;
+}
+

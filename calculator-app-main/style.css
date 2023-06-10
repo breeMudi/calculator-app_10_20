@@ -11,43 +11,102 @@ input, .display {
 
 :root {
     --body-bg: #3a4764;
-    --display-bg: #182034;
     --keypad-bg: #232c43;
-    --gaps: 20px;
-    --del-reset: #637097;
-}
+    --display-bg: #182034;
 
+    --del-reset-bg: #637097;
+    --del-reset-shadow: #637097;
+
+    --equal-bg: #d03f2f;
+    --equal-shadow: #d03f2f;
+
+    --other-key-bg:#eae3dc;
+    --other-key-shadow:#eae3dc;
+
+    --display-header-color: #ffffff;
+    --key-color: #444b5a;
+
+    --equal-color: #ffffff;
+
+    --gaps: 20px;
+    --btn-gap: 15px
+}
 
 body {
     background-color: var(--body-bg);
+    /* color: var(--alt-text); */
 }
 
 .card {
-    /* border: 1px solid green; */
-    border-radius: 5px;
-    width: fit-content;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    /* border: 2px solid green; */
+    padding: var(--gaps);
     display: flex;
     flex-direction: column;
     gap: var(--gaps);
 }
-
+/* HEADER LAYER ATTRIBUTES */
 header {
     display: flex;
     justify-content: space-between;
-    font-size: 16px;
+    align-items: center;
+    font-size: 12px;
+    height: 2.5rem;
 }
 
+header, .display {
+    color: var(--display-header-color);
+}
+
+header .title {font-size: 28px;}
+
+.theme {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    gap: var(--gaps);
+}
+.slider {
+    width: 80px;
+    height: 30px;
+    background-color: var(--keypad-bg);
+    border-radius: 18px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5px 0 5px;
+}
+
+.slider button {
+    width: 18px;
+    height: 18px;
+    position: relative;
+    border-radius: 50%;
+    border: none;
+    background-color: var(--keypad-bg);
+}
+
+#one {
+    background-color: var(--equal-bg);
+}
+
+.slider::before {
+    content:'1 2 3' ;
+    word-spacing: 18px;
+    position: absolute;
+    top: -20px;
+    display: flex;
+    justify-content: center;
+    padding-left: 4px;
+}
+
+/* SECTIONS ATTRIBUTES */
 section {    
-    border-radius: 5px;
+    border-radius: 7px;
 }
 
 .display {
     height: 100px;
-    /* border: 2px solid blue; */
     background-color: var(--display-bg);
 }
 
@@ -56,25 +115,70 @@ section {
     padding: var(--gaps);
     flex-direction: column;
     background-color: var(--keypad-bg);
-    gap: var(--gaps);
+    gap: var(--btn-gap);
 }
 
 .keypad > span {
     display: flex;
-    gap: var(--gaps);
+    gap: var(--btn-gap);
 }
 
 .row input, .lastrow input{
-    height: 50px;
+    border-radius: 7px;
+    height: 75px;
     display: flex;
-    
+    background-color: var(--other-key-bg);
+    border: none;
+    color: var(--key-color);
+    /* box-shadow: var(--other-key-shadow); */
+    box-shadow: 0px 9px 9px -8px var(--other-key-shadow);
 }
 
 .row input{
-    width: 80px;
+    width: 25%;
+    max-width: 10rem;
 }
 
 .lastrow input{
     width: 50%;
 }
 
+/* EDIT THE PROPERTIES OF SPECIFIC KEYS */
+
+
+input[value="DEL"], input[value="RESET"] {
+    background-color: var(--del-reset-bg);
+    color: #ffffff;
+    font-size: 1.5rem;
+    box-shadow: 0px 9px 9px -8px var(--del-reset-shadow);
+
+}
+input[value="="]{
+    font-size: 1.5rem;
+    background-color: var(--equal-bg);
+    color: var(--equal-color);
+    box-shadow: 0px 9px 9px -8px var(--equal-shadow);
+
+}
+
+@media (min-width:800px) {
+    :root {
+        --btn-gap: 1.5rem;
+        --gaps: 1.5rem;
+    }
+    .card {
+        width: 40%;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%)
+    }
+
+    .row input{
+        height: 4rem;
+    }
+    
+    .lastrow input{
+        height: 3.5rem;
+    }
+}

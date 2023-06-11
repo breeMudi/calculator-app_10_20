@@ -34,7 +34,6 @@ input, .display {
 
 body {
     background-color: var(--body-bg);
-    /* color: var(--alt-text); */
 }
 
 .card {
@@ -77,21 +76,27 @@ header .title {font-size: 28px;}
     padding: 0 5px 0 5px;
 }
 
-.slider button {
-    width: 18px;
-    height: 18px;
-    position: relative;
-    border-radius: 50%;
+.slider button, .floater {
     border: none;
-    background-color: var(--keypad-bg);
 }
 
-#one {
+.slider button {
+    width: 22px;
+    height: 22px;
+    position: relative;
+    background-color: transparent;
+}
+
+.floater {
+    width: 18px;
+    height: 18px;
+    position: absolute;
     background-color: var(--equal-bg);
+    border-radius: 50%;
 }
 
 .slider::before {
-    content:'1 2 3' ;
+    content:'1 2 3';
     word-spacing: 18px;
     position: absolute;
     top: -20px;

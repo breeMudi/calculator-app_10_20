@@ -113,6 +113,18 @@ section {
 .display {
     height: 100px;
     background-color: var(--display-bg);
+    text-align: right;
+    padding: 5px 10px;
+}
+/* DISPLAY SCREEN CALCULATIONS!!! */
+.values {
+    font-size: 0.9rem;
+    height: 20px;
+    border: 1px solid green;
+}
+.solution {
+    font-size: 50px;
+    border: 1px solid blue;
 }
 
 .keypad {
@@ -165,6 +177,7 @@ input[value="="]{
     box-shadow: 0px 9px 9px -8px var(--equal-shadow);
 
 }
+
 
 @media (min-width:800px) {
     :root {

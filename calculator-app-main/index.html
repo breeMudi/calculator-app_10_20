@@ -42,36 +42,36 @@
         </span>
       </header>
       <section class="display">
-        <div class="values">2 - 2</div>
-        <div class="solution">55</div>
+        <div class="typed"><p></p></div>
+        <div class="solution">0</div>
       </section>
       <section class="keypad">
         <span class="row">
-          <input class="" type="button" value="7" />
-          <input type="button" value="8" />
-          <input type="button" value="9" />
-          <input id="delete" type="button" value="DEL" />
+          <input class="number" type="button" value="7" />
+          <input class="number" type="button" value="8" />
+          <input class="number" type="button" value="9" />
+          <input onclick="del()" id="delete" type="button" value="DEL" />
         </span>
         <span class="row">
-          <input type="button" value="4" />
-          <input type="button" value="5" />
-          <input type="button" value="6" />
-          <input type="button" value="+" />
+          <input class="number" type="button" value="4" />
+          <input class="number" type="button" value="5" />
+          <input class="number" type="button" value="6" />
+          <input class="number" type="button" value="+" />
         </span>
         <span class="row">
-          <input type="button" value="1" />
-          <input type="button" value="2" />
-          <input type="button" value="3" />
-          <input type="button" value="-" />
+          <input id="1" class="number" type="button" value="1" />
+          <input class="number" type="button" value="2" />
+          <input class="number" type="button" value="3" />
+          <input class="number" type="button" value="-" />
         </span>
         <span class="row">
-          <input type="button" value="." />
-          <input type="button" value="0" />
-          <input type="button" value="/" />
-          <input type="button" value="x" />
+          <input class="number" type="button" value="." />
+          <input class="number" type="button" value="0" />
+          <input class="number" type="button" value="/" />
+          <input class="number" type="button" value="X" />
         </span>
         <span class="lastrow">
-          <input id="reset" type="button" value="RESET" />
+          <input onclick="reset()" id="reset" type="button" value="RESET" />
           <input id="equal" type="button" value="=" />
         </span>
       </section>

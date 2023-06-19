@@ -114,17 +114,18 @@ section {
     height: 100px;
     background-color: var(--display-bg);
     text-align: right;
-    padding: 5px 10px;
+    padding: 10px 15px;
 }
 /* DISPLAY SCREEN CALCULATIONS!!! */
-.values {
-    font-size: 0.9rem;
+.typed {
+    font-size: 1.2rem;
     height: 20px;
-    border: 1px solid green;
+    /* white-space: 2px; */
+    /* border: 1px solid green; */
 }
 .solution {
     font-size: 50px;
-    border: 1px solid blue;
+    /* border: 1px solid blue; */
 }
 
 .keypad {

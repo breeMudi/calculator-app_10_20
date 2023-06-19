@@ -152,6 +152,7 @@ section {
     color: var(--key-color);
     /* box-shadow: var(--other-key-shadow); */
     box-shadow: 0px 9px 9px -8px var(--other-key-shadow);
+    justify-content: center;
 }
 
 .row input{

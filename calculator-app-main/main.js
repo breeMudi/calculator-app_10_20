@@ -22,8 +22,6 @@ function defineTheme (num) {
     else if (num===2){outlet = theme.three}
     return outlet
 }
-
-
 // console.log('the hex code for first key text is ' + theme.first.text[1])
 // const themes = document.querySelector('.slider button')
 
@@ -39,9 +37,7 @@ function defineTheme (num) {
 
 function changeTheme (numbers) {
     const selectedTheme = defineTheme(numbers[0])
-    // console.log(now)
     let root = document.documentElement.style
-    // console.log(root)
     // set BG properties
     root.setProperty("--body-bg", selectedTheme.bg[0])
     root.setProperty("--keypad-bg", selectedTheme.bg[1])
@@ -58,35 +54,58 @@ function changeTheme (numbers) {
     root.setProperty("--key-color", selectedTheme.text[1])
     root.setProperty("--equal-color", selectedTheme.text[2])
 
-    
-
-
     document.querySelector('.floater').style.left = floatPosition[numbers[0]]
     // resetSliderColor()
     // document.querySelector(':root').style
     // console.log(document.querySelector(':root'))
 }
+// UPDATE DISPLAY VALUES...
+
+// let values = document.querySelector(".values")
+// const keys = document.querySelector(".row")
+// const seven = document.querySelector(".seven")
+// seven.addEventListener('click', () => {
+//     const valTxt = document.createTextNode(seven.value)
+//     values.appendChild(valTxt)
+// })
+
+// const equal = document.querySelector('#equal')
+// equal.addEventListener('click', () => {
+//     document.querySelector('.solution').textContent = (values.textContent)
+// })
 
 
+// CALCULATION SECTION
 
-// function linkColors (x) {
-    
-// }
+let solution = document.querySelector('.solution')
+const number = document.querySelectorAll('.number')
+let typed = document.querySelector('.typed p')
+let calculation = document.querySelector('#equal')
+// let newTextContent
+// let val = values.createElement
 
-// ALL COLOR TAGS
-//     --body-bg: #3a4764;
-//     --keypad-bg: #232c43;
-//     --display-bg: #182034;
+// number.forEach(num => (console.log(num)))
+number.forEach(num => num.addEventListener('click', () => {
+    let t = document.createTextNode(num.value)
+    typed.appendChild(t)
+    // solution.textContent=Math.eval (typed.textContent)
+}))
 
-//     --del-reset-bg: #637097;
-//     --del-reset-shadow: #637097;
+calculation.addEventListener('click', () => {
+    typed.textContent = typed.textContent.replace('X', '*')
+    solution.textContent = eval(typed.textContent)
+    // typed.textContent = typed.textContent.replace('*', 'X')
+    // newTextContent = solution.textContent
+})
 
-//     --equal-bg: #d03f2f;
-//     --equal-shadow: #d03f2f;
+function reset (){
+    typed.textContent=''
+    solution.textContent=0
+}
 
-//     --other-key-bg:#eae3dc;
-//     --other-key-shadow:#eae3dc;
-
-//     --display-header-color: #ffffff;
-//     --key-color: #444b5a;
-//     --equal-color: #ffffff;
+function del (){
+    let input = typed.textContent
+    input = input.slice(0, -1)
+    console.log(input)
+    typed.textContent=input
+}

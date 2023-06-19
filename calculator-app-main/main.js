@@ -9,7 +9,7 @@ const theme = {
 
     three: {bg: ["#160628", "#1d0934", "#1d0934"],
     keys: ["#58077d", "#bc15f4", "#00e0d1", "#6cf9f2", "#341c4f", "#871c9c"],
-    text: ["#ffe53d", "#ffffff", "#1b2428"]}
+    text: ["#ffe53d", "#ffe53d", "#1b2428"]}
 }
 
 // const floatPosition = {one: "5px", two: "29px", three: "58px"}
@@ -81,7 +81,7 @@ let solution = document.querySelector('.solution')
 const number = document.querySelectorAll('.number')
 let typed = document.querySelector('.typed p')
 let calculation = document.querySelector('#equal')
-// let newTextContent
+let toCalc
 // let val = values.createElement
 
 // number.forEach(num => (console.log(num)))
@@ -92,10 +92,11 @@ number.forEach(num => num.addEventListener('click', () => {
 }))
 
 calculation.addEventListener('click', () => {
-    typed.textContent = typed.textContent.replace('X', '*')
-    solution.textContent = eval(typed.textContent)
-    // typed.textContent = typed.textContent.replace('*', 'X')
-    // newTextContent = solution.textContent
+    toCalc = typed.textContent.replace('X', '*')
+    answer = eval(toCalc)
+    console.log(typeof(answer))
+    if(String(answer).length > 10){solution.textContent = answer.toFixed(10)}
+    else {solution.textContent = answer}
 })
 
 function reset (){

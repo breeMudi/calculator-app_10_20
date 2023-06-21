@@ -1,0 +1,222 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'League Spartan', sans-serif;
+}
+
+input, .display {
+    font-size: 32px;
+}
+
+:root {
+    --body-bg: #3a4764;
+    --keypad-bg: #232c43;
+    --display-bg: #182034;
+
+    --del-reset-bg: #637097;
+    --del-reset-shadow: #637097;
+
+    --equal-bg: #d03f2f;
+    --equal-shadow: #d03f2f;
+
+    --other-key-bg:#eae3dc;
+    --other-key-shadow:#eae3dc;
+
+    --display-header-color: #ffffff;
+    --key-color: #444b5a;
+
+    --equal-color: #ffffff;
+
+    --gaps: 20px;
+    --btn-gap: 15px;
+
+    --hover-number: #ffffff;
+    --hover-dr: #a2b3e1;
+    --hover-equal: #f96c5b;
+
+}
+
+body {
+    background-color: var(--body-bg);
+}
+
+.card {
+    /* border: 2px solid green; */
+    padding: var(--gaps);
+    display: flex;
+    flex-direction: column;
+    gap: var(--gaps);
+}
+/* HEADER LAYER ATTRIBUTES */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    height: 2.5rem;
+    margin-top: 20px;
+}
+
+header, .display {
+    color: var(--display-header-color);
+}
+
+header .title {font-size: 28px;}
+
+.theme {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    gap: var(--gaps);
+}
+.slider {
+    width: 80px;
+    height: 30px;
+    background-color: var(--keypad-bg);
+    border-radius: 18px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5px 0 5px;
+}
+
+.slider button, .floater {
+    border: none;
+}
+
+.slider button {
+    width: 22px;
+    height: 22px;
+    position: relative;
+    background-color: transparent;
+}
+
+.floater {
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    background-color: var(--equal-bg);
+    border-radius: 50%;
+    transition: 0.7s;
+}
+
+.slider::before {
+    content:'1 2 3';
+    word-spacing: 18px;
+    position: absolute;
+    top: -20px;
+    display: flex;
+    justify-content: center;
+    padding-left: 4px;
+}
+
+/* SECTIONS ATTRIBUTES */
+section {    
+    border-radius: 7px;
+}
+
+.display {
+    height: 120px;
+    background-color: var(--display-bg);
+    text-align: right;
+    padding: 15px 15px;
+}
+/* DISPLAY SCREEN CALCULATIONS!!! */
+.typed {
+    font-size: 1.2rem;
+    height: 20px;
+    /* white-space: 2px; */
+    /* border: 1px solid green; */
+}
+.solution {
+    font-size: 50px;
+    /* border: 1px solid blue; */
+}
+
+.keypad {
+    display: flex;
+    padding: var(--gaps);
+    flex-direction: column;
+    background-color: var(--keypad-bg);
+    gap: var(--btn-gap);
+}
+
+.keypad > span {
+    display: flex;
+    gap: var(--btn-gap);
+}
+
+.row input, .lastrow input{
+    border-radius: 7px;
+    height: 75px;
+    display: flex;
+    background-color: var(--other-key-bg);
+    border: none;
+    color: var(--key-color);
+    /* box-shadow: var(--other-key-shadow); */
+    box-shadow: 0px 9px 9px -8px var(--other-key-shadow);
+    justify-content: center;
+}
+
+.row input{
+    width: 25%;
+    max-width: 10rem;
+}
+
+.lastrow input{
+    width: 50%;
+}
+
+/* EDIT THE PROPERTIES OF SPECIFIC KEYS */
+
+input[value="DEL"], input[value="RESET"] {
+    background-color: var(--del-reset-bg);
+    color: #ffffff;
+    font-size: 1.5rem;
+    box-shadow: 0px 9px 9px -8px var(--del-reset-shadow);
+
+}
+input[value="="]{
+    font-size: 1.5rem;
+    background-color: var(--equal-bg);
+    color: var(--equal-color);
+    box-shadow: 0px 9px 9px -8px var(--equal-shadow);
+}
+
+/* HOVER EFFECTS */
+.number:hover {
+    background-color: var(--hover-number);
+}
+
+#delete:hover, #reset:hover {
+    background-color: var(--hover-dr);
+}
+
+#equal:hover {
+    background-color: var(--hover-equal);
+}
+
+
+@media (min-width:800px) {
+    :root {
+        --btn-gap: 1.5rem;
+        --gaps: 1.5rem;
+    }
+    .card {
+        width: 40%;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%)
+    }
+
+    .row input{
+        height: 4rem;
+    }
+    
+    .lastrow input{
+        height: 3.5rem;
+    }
+}

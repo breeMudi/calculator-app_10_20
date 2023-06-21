@@ -29,7 +29,11 @@ input, .display {
     --equal-color: #ffffff;
 
     --gaps: 20px;
-    --btn-gap: 15px
+    --btn-gap: 15px;
+
+    --hover-number: #ffffff;
+    --hover-dr: #a2b3e1;
+    --hover-equal: #f96c5b;
 }
 
 body {
@@ -113,10 +117,10 @@ section {
 }
 
 .display {
-    height: 100px;
+    height: 120px;
     background-color: var(--display-bg);
     text-align: right;
-    padding: 10px 15px;
+    padding: 15px 15px;
 }
 /* DISPLAY SCREEN CALCULATIONS!!! */
 .typed {
@@ -178,7 +182,19 @@ input[value="="]{
     background-color: var(--equal-bg);
     color: var(--equal-color);
     box-shadow: 0px 9px 9px -8px var(--equal-shadow);
+}
 
+/* HOVER EFFECTS */
+.number:hover {
+    background-color: var(--hover-number);
+}
+
+#delete:hover, #reset:hover {
+    background-color: var(--hover-dr);
+}
+
+#equal:hover {
+    background-color: var(--hover-equal);
 }
 
 

@@ -26,8 +26,8 @@ This is a solution to the Coding bootcamp Calculator App
 
 ### Links
 
-- Solution URL: [Link to my solution git repo](https://github.com/breeMudi/calculator-app_10_20/blob/main/calculator-app-main/main.js)
-- Live Site URL: [Link to project view on git-hub live server](https://breemudi.github.io/calculator-app_10_20/blob/main/calculator-app-main/)
+- Solution URL: [Link to my solution git repo](https://github.com/breeMudi/calculator-app_10_20)
+- Live Site URL: [Link to project view on git-hub live server](https://breemudi.github.io/calculator-app_10_20/)
 
 ## My process
 

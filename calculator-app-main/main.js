@@ -95,7 +95,7 @@ calculation.addEventListener('click', () => {
     toCalc = typed.textContent.replace('X', '*')
     try {answer = eval(toCalc)}
     catch {answer = 'ERR'}
-    console.log(typeof(answer))
+    // console.log(typeof(answer))
     if(String(answer).length > 10){solution.textContent = answer.toFixed(10)}
     else {solution.textContent = answer}
 })
@@ -108,6 +108,6 @@ function reset (){
 function del (){
     let input = typed.textContent
     input = input.slice(0, -1)
-    console.log(input)
+    // console.log(input)
     typed.textContent=input
 }

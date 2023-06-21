@@ -21,13 +21,13 @@ This is a solution to the Coding bootcamp Calculator App
 
 ### Screenshot
 
-![The desktop view of the testimonial slider](./images/desktop-view.png)
+![The desktop view of the testimonial slider](./images/desktop.png)
 <!-- ![](./desktop_view.jpg)![desktop_view](https://user-images.githubusercontent.com/65234249/224862538-59bda0ed-f0b9-41c6-9706-4af1b6f8087b.png) -->
 
 ### Links
 
 - Solution URL: [Link to my solution git repo](https://github.com/breeMudi/calculator-app_10_20/blob/main/calculator-app-main/main.js)
-- Live Site URL: [Link to project view on git-hub live server](https://breemudi.github.io/coding-bootcamp-testimonials-slider-master_9-20/)
+- Live Site URL: [Link to project view on git-hub live server](https://breemudi.github.io/calculator-app_10_20/blob/main/calculator-app-main/)
 
 ## My process
 
@@ -37,6 +37,7 @@ This is a solution to the Coding bootcamp Calculator App
 - Structure the calculator with responsive keys on CSS
 - Determine theme adjustment mechanism
 - Create default CSS colour variables
+- Identify on-hover background colours on fontawesome website
 
 
 Finally- for JavaScript:
@@ -45,6 +46,27 @@ Finally- for JavaScript:
 - Write functions to access the colour palette according to the user theme
 - Access all keys using the addEventListener and querySelectAll methods on the DOM
 - Furthermore, using the eval function, evaluate inputted math statements
+
+- I am proud of this Color code arranged in an array as it makes changing colours in the future less cumbersome
+```
+const theme = {
+    one: {bg: ['#3a4764', '#232c43', '#182034'],
+    keys: ['#637097', '#404e72', '#d03f2f', '#93261a', '#eae3dc', '#b4a597'],
+    text: ['#ffffff', '#444b5a', "#ffffff"],
+    hover: ['#ffffff', '#a2b3e1', '#f96c5b']},
+
+    two: {bg: ["#e6e6e6", '#d1cccc', "#ededed"],
+    keys: ["#377f86", "#1b5f65", "#ca5502", "#893901", "#e5e4e1", "#a69d91" ],
+    text: ["#35352c",,"#35352c", "#ffffff"],
+    hover: ['#ffffff', '#62b5bd', '#ff8b38']},
+
+    three: {bg: ["#160628", "#1d0934", "#1d0934"],
+    keys: ["#58077d", "#bc15f4", "#00e0d1", "#6cf9f2", "#341c4f", "#871c9c"],
+    text: ["#ffe53d", "#ffe53d", "#1b2428"],
+    hover: ['#6b34ac', '#8631b0', '#94fff9']}
+}
+```
+- While the colours were applied to root CSS through the setProperty method
 
 ### Built with
 

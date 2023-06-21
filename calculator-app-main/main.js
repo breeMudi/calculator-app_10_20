@@ -93,7 +93,8 @@ number.forEach(num => num.addEventListener('click', () => {
 
 calculation.addEventListener('click', () => {
     toCalc = typed.textContent.replace('X', '*')
-    answer = eval(toCalc)
+    try {answer = eval(toCalc)}
+    catch {answer = 'ERR'}
     console.log(typeof(answer))
     if(String(answer).length > 10){solution.textContent = answer.toFixed(10)}
     else {solution.textContent = answer}

@@ -89,7 +89,7 @@ It was interesting to figure out how to change the calculator theme
 
 ### Continued development
 
-As part of my 20-frontendMentor project challenge series, here is project 11 of 20 ... yaay!
+As part of my 20-frontendMentor project challenge series, here is project 10 of 20 ... yaay!
 
 I have now started to learn the Reactjs framework. I can't wait to see how this project would be
 
